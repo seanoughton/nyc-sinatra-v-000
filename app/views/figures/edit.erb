@@ -6,8 +6,12 @@
   <h3>Edit Figure Name</h3>
   <input type="text" name="figure[name]" id="figure_name">
 
-  <h3>Add a Figure Title</h3>
-  <input type="text" name="title[name]" id="figure_title">
+  <h3>Change the Figure's Title</h3>
+
+  <% Title.all.each do |title| %>
+    <label><%= title.name %></label>
+    <input type="checkbox" id="title_<%=title.id%>" name="figure[title_ids]" value="<%= title.id %>"><br>
+  <% end %>
 
   <h3>Add a Figure Landmark</h3>
   <input type="text" name="landmark[name]" id="new_landmark">

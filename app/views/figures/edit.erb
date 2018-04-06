@@ -1,7 +1,20 @@
 <h1>Edit the information about <%=@figure%></h1>
 
-<form action="" method="POST">
+<form action="/figures/<%=@figure.id%>" method="POST">
   <input type="hidden" name="_method" value="PATCH">
+
+  <h3>Edit Figure Name</h3>
+  <input type="text" name="figure[name]" id="figure_name">
+
+  <h3>Add a Figure Title</h3>
+  <input type="text" name="figure[title_ids]" id="figure_title">
+
+  <h3>Add a Figure Landmark</h3>
+  <input type="text" name="figure[landmark]" id="new_landmark">
+
+  <h3>Not sure why we need to include <%=@figure.name%></h3>
+
+  <input type="submit" value="Edit Figure">
 
 
 </form>

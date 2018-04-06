@@ -4,7 +4,7 @@
   <input type="hidden" name="_method" value="PATCH">
 
   <h3>Edit Figure Name</h3>
-  <input type="text" name="figure[name]" id="figure_name">
+  <input type="text" name="figure[name]" id="figure_name" value="<%= @figure.name%>">
 
   <h3>Change the Figure's Title</h3>
 
@@ -13,10 +13,18 @@
     <input type="checkbox" id="title_<%=title.id%>" name="figure[title_ids]" value="<%= title.id %>"><br>
   <% end %>
 
-  <h3>Add a Figure Landmark</h3>
+  <h3>Add New Title:</h3>
+<input type="text" id="new_title" name="title[name]"><br></br>
+
+<h3>Choose from an Existing Landmark</h3>
+  <% Landmark.all.each do |landmark| %>
+    <label><%= landmark.name %></label>
+    <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id="<%= landmark.name %>" <%='checked' if @figure.landmarks.include?(landmark) %>>
+  <% end %>
+
+  <h3>Add a New Landmark</h3>
   <input type="text" name="landmark[name]" id="new_landmark">
 
-  <h3>Not sure why we need to include <%=@figure.name%></h3>
 
   <input type="submit" value="Edit Figure">
 

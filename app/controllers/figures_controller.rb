@@ -8,9 +8,14 @@ class FiguresController < ApplicationController
     @new_figure = Figure.create(params[:figure])
     @new_title = Title.create(params[:title])
     @new_figure.titles << @new_title
-    @new_landmark = Title.create(params[:landmark])
+    @new_landmark = Landmark.create(params[:landmark])
     @new_figure.landmarks << @new_landmark
     @new_figure.save
+  end
+
+  get '/figures' do
+    @figures = Figures.all
+    erb :'figures/'
   end
 
 end

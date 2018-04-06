@@ -1,12 +1,13 @@
-
+<h1> Create a New Figure</h1>
 <form action="/figures/new" method="POST">
 
+  <h2>Enter the Figure's Name</h2>
   <input type="text" id="figure_name" name="figure[name]">
 
   <h2> Choose a Title from this list:</h2>
   <br></br>
   <%Title.all.each do |title|%>
-    <input type="checkbox" id="title_id" name="figure[title_ids][]" value="title.id">
+    <input type="checkbox" id="title_id" name="figure[title_ids][]" value="title.id"><%=title.name%></input>
     <br></br>
   <%end%>
 
@@ -16,7 +17,7 @@
   <h2> Choose a Landmark from this list:</h2>
   <br></br>
   <%Landmark.all.each do |landmark|%>
-    <input type="checkbox" id="landmark_id" name="figure[landmark_ids][]" value="landmark.id">
+    <input type="checkbox" id="landmark_id" name="figure[landmark_ids][]" value="landmark.id"><%=landmark.name%></input>
     <br></br>
   <%end%>
 

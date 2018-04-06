@@ -38,7 +38,7 @@ class FiguresController < ApplicationController
     if !params[:landmark][:name].empty?
       @figure.landmarks << Landmark.find_or_create_by(params[:landmark])
     end
-    
+
     @figure.save
     redirect to "/figures/#{@figure.id}"
   end

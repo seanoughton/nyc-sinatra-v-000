@@ -1,5 +1,5 @@
 <h1>Edit the information about <%=@landmark%></h1>
-<form action="/landmark/<%=@landmark.id%>" method="POST">
+<form action="/landmarks/<%=@landmark.id%>" method="POST">
   <input type="hidden" name="_method" value="PATCH">
 
   <h3>Edit Landmark Name</h3>
@@ -9,6 +9,7 @@
   <input type="text" name="landmark[year_completed]" id="year_completed">
 
   <h3>Not sure why this is here :<%=@landmark.year_completed.to_s%> </h3>
+
 
   <input type="submit" value="Edit Landmark">
 

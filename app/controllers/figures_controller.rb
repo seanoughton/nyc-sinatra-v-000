@@ -20,7 +20,7 @@ class FiguresController < ApplicationController
 
   post '/figures/new' do
     @new_figure = Figure.create(params[:figure])
-    
+
     if !params[:title][:name].empty?
       @new_figure.titles << Title.create(params[:title])
     end

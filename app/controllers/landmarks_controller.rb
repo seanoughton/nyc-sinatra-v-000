@@ -1,5 +1,8 @@
 class LandmarksController < ApplicationController
 
+  get '/' do
+    redirect '/landmarks'
+  end
 
   get '/landmarks' do
     erb :'/landmarks/index'

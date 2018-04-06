@@ -29,6 +29,7 @@ class FiguresController < ApplicationController
 
   patch '/figures/:id' do
     @figure = Figure.find(params[:id])
+    binding.pry
     @figure.update(params[:figure])
     @landmark = Landmark.find_or_create_by(params[:landmark])
     @figure.landmarks << @landmark

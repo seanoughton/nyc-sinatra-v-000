@@ -5,8 +5,9 @@ class LandmarksController < ApplicationController
   end
 
   post '/landmarks/new' do
-    #@new_landmark = Figure.create(params[:landmark])
-    #@new_landmark.save
+    binding.pry
+    @new_landmark = Landmark.create(params[:landmark])
+    @new_landmark.save
   end
 
 

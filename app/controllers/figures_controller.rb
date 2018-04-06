@@ -6,8 +6,8 @@ class FiguresController < ApplicationController
 
   post '/figures/new' do
     @new_figure = Figure.create(params[:figure])
-    binding.pry
 
+    @new_figure.save
   end
 
 end

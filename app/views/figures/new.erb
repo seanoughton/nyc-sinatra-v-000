@@ -7,8 +7,7 @@
   <h2> Choose a Title from this list:</h2>
   <br></br>
   <%Title.all.each do |title|%>
-    <%binding.pry%>
-    <input type="checkbox" id="title_#{title.id}" name="figure[title_ids][]" value="title.id"><%=title.name%></input>
+    <input type="checkbox" id="title_<%=title.id%>" name="figure[title_ids][]" value="<%=title.id%>"><%=title.name%></input>
     <br></br>
   <%end%>
 
@@ -25,5 +24,5 @@
   <h2>Or Create a New Landmark</h2>
   <input type="text" id="landmark_name" name="landmark[name]">
 
-  <input type="submit" value="Create Figure">
+  <input type="submit" value="Create New Figure">
 </form>

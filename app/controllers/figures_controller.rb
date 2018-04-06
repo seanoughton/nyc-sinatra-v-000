@@ -4,15 +4,6 @@ class FiguresController < ApplicationController
     erb :'/figures/new'
   end
 
-  post '/figures/new' do
-    @new_figure = Figure.create(params[:figure])
-    @new_title = Title.create(params[:title])
-    @new_figure.titles << @new_title
-    @new_landmark = Landmark.create(params[:landmark])
-    @new_figure.landmarks << @new_landmark
-    @new_figure.save
-  end
-
   get '/figures' do
     erb :'figures/index'
   end
@@ -25,6 +16,15 @@ class FiguresController < ApplicationController
   get "/figures/:id/edit" do
     @figure = Figure.find(params[:id])
     erb :'figures/edit'
+  end
+
+  post '/figures/new' do
+    @new_figure = Figure.create(params[:figure])
+    @new_title = Title.create(params[:title])
+    @new_figure.titles << @new_title
+    @new_landmark = Landmark.create(params[:landmark])
+    @new_figure.landmarks << @new_landmark
+    @new_figure.save
   end
 
   patch '/figures/:id' do

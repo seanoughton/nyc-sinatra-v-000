@@ -1,3 +1,12 @@
 <h1>Here is information about <%=@figure%></h1>
 
 <h3>Figure Name: <%=@figure.name%></h3>
+<h3>Figure Titles</h3>
+<%@figure.titles.each do |title|%>
+  <%=title.name%>
+<%end%>
+
+<h3>Figure Landmarks</h3>
+<%@figure.landmarks.each do |landmark|%>
+  <%=landmark.name%>
+<%end%>

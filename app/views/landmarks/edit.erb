@@ -1,0 +1,17 @@
+<h1>Edit the information about <%=@landmark%></h1>
+
+<form action="/landmark/<%=@figure.id%>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+
+  <h3>Edit Landmark Name</h3>
+  <input type="text" name="landmark[name]" id="landmark_name">
+
+  h3>Edit Landmark Year Completed</h3>
+  <input type="text" name="landmark[year_completed]" id="year_completed">
+
+
+
+  <input type="submit" value="Edit Figure">
+
+
+</form>

@@ -13,6 +13,11 @@
     <input type="checkbox" id="title_<%=title.id%>" name="figure[title_ids]" value="<%= title.id %>"><br>
   <% end %>
 
+  <% Landmark.all.each do |landmark| %>
+    <label><%= landmark.name %></label>
+    <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id="<%= landmark.name %>" <%='checked' if @figure.landmarks.include?(landmark) %>>
+  <% end %>
+
   <h3>Add a Figure Landmark</h3>
   <input type="text" name="landmark[name]" id="new_landmark">
 

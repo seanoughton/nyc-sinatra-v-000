@@ -4,6 +4,7 @@
   <input type="text" id="figure_name" name="figure[name]">
 
   <%Title.all.each do |title|%>
+    <input type="checkbox" id="title_id" name="figure[title_ids][]" value="title.id">
   <%end%>
 
   <input type="submit" value="Create Figure">
